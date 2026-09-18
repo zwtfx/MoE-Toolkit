@@ -24,7 +24,9 @@ Disk Space: ~120GB+ for casual projects | ~150-200GB+ for larger projects
 
 ## CONTENTS
 llama.cpp folder - llama.cpp source including needed scripts (mainly convert_hf_to_gguf.py)
+
 llama-tools folder - Windows x64 CUDA 12.4 binaries (including cudart DLLs)
+
 setup.bat - Running this will initialize a virtual environment with all the required libraries installed
 
 
