@@ -11,7 +11,7 @@ These models are made up of different 'experts' that are each individually good 
 The BEST part about MoE models, is that they only utilise a small portion of their brain causing them to respond in blistering speeds. These are how 'flash' models of flagship AI brands are made. For example, lets say a 20b model has 4 experts with even amounts of brain, so 5b each (most of the time this is unusual). Lets say the user asks about something related to science; the model will only use 5 billion parameters of its 20 billion parameter brain to respond with the science expert.
 
 ## Recommended Requirements
-- Windows 10/11 x64bit, Python 3.10–3.12, git
+Windows 10/11 x64bit, Python 3.10–3.12, git
 GPU: NVIDIA (MINIMUM of 8GB VRAM, 16GB recommended)
 RAM: 64GB (32GB works, but you may run into a few issues)
 Disk Space: ~120GB+ for casual projects | ~150-200GB+ for larger projects
