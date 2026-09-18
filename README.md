@@ -27,6 +27,8 @@ llama.cpp folder - llama.cpp source including needed scripts (mainly convert_hf_
 
 llama-tools folder - Windows x64 CUDA 12.4 binaries (including cudart DLLs)
 
+gate_check.py - Python script that runs a comparison between 2+ models to see if they're compatible to merge
+
 setup.bat - Running this will initialize a virtual environment with all the required libraries installed
 
 
@@ -37,4 +39,11 @@ This is less than ideal, but still doable:
 
 
 ## EXAMPLE OF HOW TO USE THIS TOOLKIT
-too lazy, will write later
+- RUN SETUP.BAT
+- OPEN A NEW COMMAND PROMPT WINDOW AND RUN `moe-env\Scripts\activate`
+- DOWNLOAD 2 MODELS OF YOUR CHOICE VIA `hf download MODEL-OF-YOUR-CHOICE --local-dir ./model-ahf download --local-dir ./model-b`
+- RUN A COMPARISON / GATE CHECK VIA `python gate_check.py ./model-a ./model-b`
+- CREATE A BRAIN YAML FILE AND CONFIG IT TO YOUR WANTED SETTINGS (i'll add a template in later versions)
+- RUN `mergekit-moe brain.yml ./my-brain --copy-tokenizer --allow-crimes --lazy-unpickle --out-shard-size 2B` AND IF YOU'RE ON A NVIDIA GPU INCLUDE `--device cuda`
+- CONVERT THE MODEL TO GGUF VIA `python llama.cpp\convert_hf_to_gguf.py .\my-brain --outfile brain-f16.gguf --outtype bf16llama-tools\llama-quantize.exe brain-f16.gguf brain-Q4_K_M.gguf Q4_K_Mdel brain-f16.gguf`
+- FINALLY TEST YOUR MODEL VIA `llama-tools\llama-server.exe -m brain-Q4_K_M.gguf -c 16384 -ngl 99 --jinja --port 8080` AND GO TO `http://localhost:8000`
