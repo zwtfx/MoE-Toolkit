@@ -41,7 +41,7 @@ This is less than ideal, but still doable:
 ## EXAMPLE OF HOW TO USE THIS TOOLKIT
 - RUN SETUP.BAT
 - OPEN A NEW COMMAND PROMPT WINDOW AND RUN `moe-env\Scripts\activate`
-- DOWNLOAD 2 MODELS OF YOUR CHOICE VIA `hf download MODEL-OF-YOUR-CHOICE --local-dir ./model-ahf download --local-dir ./model-b`
+- DOWNLOAD 2 MODELS OF YOUR CHOICE VIA `hf download MODEL-OF-YOUR-CHOICE --local-dir ./model-a` AND `hf download MODEL-B --local-dir ./model-b`
 - RUN A COMPARISON / GATE CHECK VIA `python gate_check.py ./model-a ./model-b`
 - CREATE A BRAIN YAML FILE AND CONFIG IT TO YOUR WANTED SETTINGS (i'll add a template in later versions)
 - RUN `mergekit-moe brain.yml ./my-brain --copy-tokenizer --allow-crimes --lazy-unpickle --out-shard-size 2B` AND IF YOU'RE ON A NVIDIA GPU INCLUDE `--device cuda`
