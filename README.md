@@ -27,7 +27,7 @@ llama.cpp folder - llama.cpp source including needed scripts (mainly convert_hf_
 
 llama-tools folder - Windows x64 CUDA 12.4 binaries (including cudart DLLs)
 
-gate_check.py - Python script that runs a comparison between 2+ models to see if they're compatible to merge
+tools folders - Full of custom-made python scripts by me to help with your errors (gate_check.py, strip_vision.py, etc.)
 
 setup.bat - Running this will initialize a virtual environment with all the required libraries installed
 
