@@ -46,5 +46,5 @@ This is less than ideal, but still doable:
 - CREATE A BRAIN YAML FILE AND CONFIG IT TO YOUR WANTED SETTINGS (i'll add a template in later versions)
 - RUN `mergekit-moe brain.yml ./my-brain --copy-tokenizer --allow-crimes --lazy-unpickle --out-shard-size 2B` AND IF YOU'RE ON A NVIDIA GPU INCLUDE `--device cuda`
 - CONVERT THE MODEL TO GGUF VIA `python llama.cpp\convert_hf_to_gguf.py .\my-brain --outfile brain-f16.gguf --outtype bf16`
-- QUANTIZE THE MODEL VIA `llama-tools\llama-quantize.exe brain-f16.gguf brain-Q4_K_M.gguf Q4_K_Mdel brain-f16.gguf`
+- QUANTIZE THE MODEL VIA `llama-tools\llama-quantize.exe brain-f16.gguf brain-Q4_K_M.gguf Q4_K_M` THEN CLEAN-UP WITH `del brain-f16.gguf`
 - FINALLY TEST YOUR MODEL VIA `llama-tools\llama-server.exe -m brain-Q4_K_M.gguf -c 16384 -ngl 99 --jinja --port 8080` AND GO TO `http://localhost:8080` (OR THE PORT YOU CHOSE)
